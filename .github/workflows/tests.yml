@@ -30,7 +30,7 @@ jobs:
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v1
         with:
-          release: 2023a
+          release: R2023a
       # Installs other dependenvies
       - name: Install dependencies
         run: |
