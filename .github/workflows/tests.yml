@@ -7,21 +7,18 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-      - name: Set up MATLAB
-        uses: matlab-actions/setup-matlab@v2
-        with:
-          release: R2023b
-      - name: Prepend MATLAB to PATH on Linux
-        if: runner.os == 'Linux'
-        run: echo "/usr/local/MATLAB/R2023b/bin" >> $GITHUB_PATH
-      - name: Run script
-        uses: matlab-actions/run-command@v2
-        with:
-          command: myscript
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"   
+          python-version: "3.10"  
+      - name: Set up MATLAB
+        uses: matlab-actions/setup-matlab@v2
+        with:
+          release: R2023a
+      - name: Run script
+        uses: matlab-actions/run-command@v2
+        with:
+          command: myscript 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
