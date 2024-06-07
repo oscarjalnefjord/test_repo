@@ -6,11 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up MATLAB
         uses: matlab-actions/setup-matlab@v2
         with:
-          release: R2023a
+          release: R2023b
+      - name: Prepend MATLAB to PATH on Linux
+        if: runner.os == 'Linux'
+        run: echo "/usr/local/MATLAB/R2023b/bin" >> $GITHUB_PATH
       - name: Run script
         uses: matlab-actions/run-command@v2
         with:
@@ -29,7 +32,9 @@ jobs:
           pip install pytest pytest-cov
           python -m pytest
 
-          
+    
+
+
 #name: Unit tests
 #
 #on: [push, pull_request]
