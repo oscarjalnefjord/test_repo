@@ -21,7 +21,7 @@ jobs:
           command: myscript 
       - name: Prepend MATLAB to PATH on Linux
         run: |
-          echo $LD_LIBRARY_PATH
+          ls /opt/hostedtoolcache/MATLAB/2024.1.999/x64/bin/glnxa64
       #    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH::/opt/hostedtoolcache/MATLAB/2024.1.999/x64/bin/glnxa64
       #    echo "/opt/hostedtoolcache/MATLAB/2024.1.999/x64/bin/glnxa64" >> $LD_LIBRARY_PATH  
       #  echo "/opt/hostedtoolcache/MATLAB/2024.1.999/x64/bin" >> $GITHUB_PATH
