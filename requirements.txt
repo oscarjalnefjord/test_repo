@@ -1,2 +1,2 @@
 numpy
-matlabengine==9.14.3
+matlabengine==24.1.2
